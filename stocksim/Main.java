@@ -187,7 +187,7 @@ public class Main {
                 } else if (choice == 6) {
                     // DYNAMIC METHOD DISPATCH in action
                     // account is declared as BaseAccount but calls UserAccount's showSummary()
-                    account.showSummary();
+                   user.showSummary(); // calls UserAccount's showSummary() - Dynamic Method Dispatch
 
                 } else if (choice == 7) {
                     market.fluctuatePrices(); // randomly updates all stock and fund prices
