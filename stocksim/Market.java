@@ -11,13 +11,15 @@ public class Market {
     private ArrayList<Asset> assets;
 
     // constructor - initializes the market and loads default stocks
-    public Market() {
+    public Market()
+    {
         assets = new ArrayList<>(); // create empty list
         loadAssets();               // fill with default data
     }
 
     // private method - adds default stocks and mutual funds to the market
-    private void loadAssets() {
+    private void loadAssets() 
+    {
         assets.add(new Stock("RELIANCE", 2500.0, "Energy",  100)); // add Stock objects
         assets.add(new Stock("TCS",      3800.0, "IT",       80)); // add Stock objects
         assets.add(new Stock("HDFC",     1600.0, "Banking", 120)); // add Stock objects
@@ -27,7 +29,8 @@ public class Market {
     }
 
     // display all assets in the market
-    public void showMarket() {
+    public void showMarket() 
+    {
         System.out.println("\n======= MARKET =======");
         for (int i = 0; i < assets.size(); i++) {                 // loop through all assets
             System.out.println((i + 1) + ". " + assets.get(i));  // toString() calls subclass version (polymorphism)
@@ -37,7 +40,8 @@ public class Market {
     }
 
     // find a stock by name - throws exception if not found
-    public Stock findStock(String name) throws StockNotFoundException {
+    public Stock findStock(String name) throws StockNotFoundException 
+    {
         for (Asset a : assets) {                                    // loop through all assets
             if (a instanceof Stock) {                               // check if it is a Stock
                 Stock s = (Stock) a;                               // downcast Asset to Stock

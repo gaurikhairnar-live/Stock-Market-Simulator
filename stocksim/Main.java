@@ -26,10 +26,8 @@ public class Main {
         // POLYMORPHISM + DYNAMIC METHOD DISPATCH
         // BaseAccount is abstract, UserAccount is the actual object
         // Java decides at runtime which showSummary() to call - this is Dynamic Method Dispatch
-        BaseAccount account = new UserAccount(userName, accountId, balance);
-
-        // downcast needed to access buyStock() and sellStock() which are specific to UserAccount
-        UserAccount user = (UserAccount) account;
+       
+       UserAccount user = new UserAccount(userName, accountId, balance);// easy way to create user account object
 
         // INTERFACE USAGE
         // Tradable interface is implemented by Stock and MutualFund
