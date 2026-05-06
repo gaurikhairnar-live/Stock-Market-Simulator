@@ -3,8 +3,8 @@ package stocksim; // package declaration
 import java.util.ArrayList; // import ArrayList to store owned stocks and funds
 
 // Inheritance - UserAccount extends BaseAccount, gets userName and accountId
-// Interface   - implements Tradable, must provide buy() and sell()
-public class UserAccount extends BaseAccount implements Tradable {
+
+public class UserAccount extends BaseAccount {
 
     private double balance;                // Encapsulation - user's current money
     private ArrayList<String> ownedNames;  // Encapsulation - names of stocks/funds owned
@@ -36,19 +36,6 @@ public class UserAccount extends BaseAccount implements Tradable {
         System.out.println("=============================\n");
     }
 
-    // implements Tradable interface buy() - basic version
-    @Override
-    public void buy(int qty) throws Exception {
-        if (qty < 1) throw new InvalidQuantityException(qty); // custom exception for bad qty
-        System.out.println("  Use buyStock() or buyMutualFund() for full purchase.");
-    }
-
-    // implements Tradable interface sell() - basic version
-    @Override
-    public void sell(int qty) throws Exception {
-        if (qty < 1) throw new InvalidQuantityException(qty); // custom exception for bad qty
-        System.out.println("  Use sellStock() or sellMutualFund() for full sale.");
-    }
 
     // full buy flow for stocks
     public void buyStock(Stock stock, int qty) throws Exception {

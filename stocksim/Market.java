@@ -56,12 +56,12 @@ public class Market {
         for (Asset a : assets) {                                    // loop through all assets
             if (a instanceof MutualFund) {                         // check if it is a MutualFund
                 MutualFund mf = (MutualFund) a;                    // downcast Asset to MutualFund
-                if (mf.getName().equalsIgnoreCase(name)) return mf; // return if found
+                if (mf.getName().equalsIgnoreCase(name)) return mf; // return if found 
             }
         }
-        throw new StockNotFoundException(name); // not found - throw custom exception
+        throw new StockNotFoundException(name); // not found - throw custom 
+        // exception the throws keyword tells Java this method can raise that exception
     }
-
     // randomly change all asset prices to simulate market movement
     public void fluctuatePrices() {
         Random r = new Random(); // create Random object
@@ -75,6 +75,8 @@ public class Market {
         System.out.println("------------------\n");
     }
 
+
     // getter - encapsulation
-    public ArrayList<Asset> getAssets() { return assets; }
+    public ArrayList<Asset> getAssets() { return assets; } //Because it is private — no other class can directly touch it. 
+    // So we write a getter method to give controlled access to it.
 }
